@@ -24,9 +24,9 @@
         </template>
         <side-menu-item :routes="item.children"></side-menu-item>
       </el-submenu>
-      
+
       <el-submenu
-      v-if="item.children"
+      v-if="(!item.meta || !item.meta.role)&&item.children"
       :index="item.path"
       >
         <template slot="title">
