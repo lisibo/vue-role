@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import lsbmMenu from '@/components/menu.vue'
+import lsbmMenu from '@/components/menu/index.vue'
 import permission from '@/directive/permission/index'
 export default {
   data(){

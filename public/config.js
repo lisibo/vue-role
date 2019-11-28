@@ -1,1 +1,1 @@
-const name = ['admin']
+const name = ['lsb']

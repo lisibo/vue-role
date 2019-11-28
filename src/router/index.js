@@ -8,14 +8,11 @@ export const constantRouter = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: Home,
   },
   {
     path: "/about",
     name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   }
@@ -34,7 +31,7 @@ export const asyncRouter = [
         path:'/permission/permission_1',
         name:'permission_1',
         meta:{
-          role:['lsb']
+          role:['lsb','admin']
         },
         component:()=>import('@/views/permission_1.vue')
       },
@@ -44,7 +41,43 @@ export const asyncRouter = [
         meta:{
           role:['lsb','admin']
         },
-        component:()=>import('@/views/permission_2.vue')
+        component:()=>import('@/views/permission_2.vue'),
+        children:[
+          {
+            path:'/permission/permission_2/permission_2_1',
+            name:'permission_2_1',
+            meta:{
+              role:['lsb','admin']
+            },
+            component:()=>import('@/views/permission_2_1.vue'),
+            children:[
+              {
+                path:'/permission/permission_2/permission_2_1/permission_2_1_1',
+                name:'permission_2_1_1',
+                meta:{
+                  role:['lsb','admin']
+                },
+                component:()=>import('@/views/permission_2_1_1.vue')
+              }
+            ]
+          },
+          {
+            path:'/permission/permission_2/permission_2_2',
+            name:'permission_2_2',
+            meta:{
+              role:['admin']
+            },
+            component:()=>import('@/views/permission_2_2.vue')
+          },
+          {
+            path:'/permission/permission_2/permission_2_3',
+            name:'permission_2_3',
+            meta:{
+              role:['lsb','admin']
+            },
+            component:()=>import('@/views/permission_2_3.vue')
+          }
+        ]
       },
       {
         path:'/permission/permission_3',

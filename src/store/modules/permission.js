@@ -26,8 +26,8 @@ const actions = {
   getRoutes({commit},data){
     return new Promise(resolve => {
       const { roles } = data;
-      
       const role = roles
+      console.log(role,'123')
       const accessedRouters = asyncRouter.filter(v => {
         if (roles.indexOf('admin') >= 0) return true;
         if (hasPermission(roles, v)) {

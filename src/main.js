@@ -13,6 +13,7 @@ Vue.use(elementUi)
 Vue.config.productionTip = false;
 
 var roles = name
+window.localStorage.setItem('role',roles)
 store.dispatch('getRoutes',{roles}).then(()=>{
   router.addRoutes(store.getters.permission_routes) 
 })

@@ -1,5 +1,5 @@
 <template>
   <div>
-    <router-view></router-view>
+    permission_2_2
   </div>
 </template>

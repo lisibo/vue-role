@@ -16,7 +16,6 @@ export default {
       }
     } else {
       return;
-      // throw new Error(`need roles! Like v-permission="['admin','editor']"`)
     }
   }
 }
