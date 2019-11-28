@@ -1,1 +1,1 @@
-const name = ['lsb']
+const name = []

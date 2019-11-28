@@ -115,7 +115,14 @@ export const asyncRouter = [
       {
         path: '/bbb/bbb_1',
         name: 'bbb_1',
-        component: ()=>import('@/views/bbb_1.vue')
+        component: ()=>import('@/views/bbb_1.vue'),
+        children:[
+          {
+            path: '/bbb/bbb_1/bbb_1_1',
+            name: 'bbb_1_1',
+            component: ()=>import('@/views/bbb_1_1.vue'),
+          }
+        ]
       },
       {
         path: '/bbb/bbb_2',
